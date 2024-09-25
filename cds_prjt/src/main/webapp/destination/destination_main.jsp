@@ -13,10 +13,9 @@
     <section>
         <div id="des1">
             <div class="desheader">
-                <div>
-                    <h2>국내 여행지 정보</h2>
-                    <p>얼마나 알고 있니?</p>
-                </div>
+                <h2>국내 여행지 정보</h2>
+                <p>얼마나 알고 있니?</p>
+
             </div>
             <div class="desselect">
                 <h3>서울시</h3>
