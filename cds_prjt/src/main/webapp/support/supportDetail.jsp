@@ -9,6 +9,7 @@
 integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
 crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="support.css">
+<script src="../resources/js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div id="section">
@@ -84,20 +85,14 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         }
 
         const toggleContent = (id, title) => {
-        	const content = document.getElementById(id);
-            const upIcon = title.querySelector('.fa-angle-up');
-            const downIcon = title.querySelector('.fa-angle-down');
-            
-            if (content.style.display === 'none' || content.style.display === '') {
-                content.style.display = 'block';
-                upIcon.style.display = 'block';
-                downIcon.style.display = 'none'
-            } else {
-                content.style.display = 'none';
-                upIcon.style.display = 'none';
-                downIcon.style.display = 'block';
-            }
-        }
+            const $content = $('#' + id);
+            const $upIcon = $(title).children('.fa-angle-up');
+            const $downIcon = $(title).children('.fa-angle-down');
+
+            $content.toggle();
+            $upIcon.toggle();
+            $downIcon.toggle();
+        };
 
     </script>
 </body>
