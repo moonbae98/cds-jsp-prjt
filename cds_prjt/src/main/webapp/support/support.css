@@ -11,7 +11,7 @@
     width: 100%;
     height: max-content;
 }
-#supportMain>.supMainTop{
+#supportMain>.supMainTop{ /* 상단 큰 고객센터 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
 #supportMain>.supMainTop>h1{
 	font-size: 40px;
 }
-#supportMain>.supMainMid{
+#supportMain>.supMainMid{ /* 1:1 문의 */
     width: 100%;
     margin: 80px 0px;
     display: flex;
@@ -33,7 +33,7 @@
     margin-bottom: 30px;
     font-size: 23px;
 }
-#supportMain>.supMainMid>button{
+#supportMain>.supMainMid>button{ /* 오픈채팅/로그인 */
     background-color: #87bee585;
     border: solid 1px #6e6e6e;
     width: 70%;
@@ -52,11 +52,11 @@
     font-weight: 600;
     color: #969696;
 }
-#supportMain>.supMainBtm{
+#supportMain>.supMainBtm{ /* 하단 */
     display: flex;
     justify-content: space-around;
 }
-#supportMain>.supMainBtm>div{
+#supportMain>.supMainBtm>div{ /* 각 항목 박스 */
     padding: 10px;
     border: solid 1px #969696;
     width: 30%;
@@ -68,7 +68,7 @@
 #supportMain>.supMainBtm>div>h4{
     font-size: 22px;
 }
-#supportMain>.supMainBtm>div>button{
+#supportMain>.supMainBtm>div>button{ /* 각 항목 더보기 버튼 */
     margin-left: auto;
     margin-top: 10px;
     cursor: pointer;
@@ -77,7 +77,7 @@
     padding: 2px 10px;
     border-radius: 30px;
 }
-#supportMain>.supMainBtm>div>.items{
+#supportMain>.supMainBtm>div>.items{ /* 리스트 출력될 곳 */
     width: 100%;
     margin-top: 65px;
     padding: 0px 10px;
@@ -99,9 +99,9 @@
     display: flex;
     padding-top: 40px;
 }
-#supportDetail>aside{
+#supportDetail>aside{ /* 왼쪽 카테고리 선택 */
     width: 20%;
-    padding: 10px;
+    padding: 10px 2%;
 }
 #supportDetail>aside>h2{
 	padding-bottom: 30px;
@@ -117,7 +117,7 @@
     width: 90%;
     margin-left: 5%;
 }
-#supportDetail>aside>div>button{
+#supportDetail>aside>div>button{ /* 각 카테고리 버튼 */
 	border: none;
     background-color: #fff0;
     font-size: 16px;
@@ -126,14 +126,14 @@
     width: 90%;
     text-align: left;
 }
-#supportDetail>section{
+#supportDetail>section{ /* 오른쪽 콘텐츠 표시될 곳 */
     width: 90%;
-    padding: 10px;
+    padding: 10px 2%;
 }
 #supportDetail>section> hr{
     border: solid 0.5px #cecece;
 }
-#supportDetail>section>.sectionTop{
+#supportDetail>section>.sectionTop{ /* 카테고리 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,11 +145,11 @@
 	font-size: 30px;
 	font-weight: bold;
 }
-#supportDetail>section>.content{
+#supportDetail>section>.content{ /* 콘텐츠 박스 */
 	width: 100%;
     padding: 2%;
 }
-#supportDetail>section>.content>.contentTitle{
+#supportDetail>section>.content>.contentTitle{ /* 콘텐츠 제목 */
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -166,7 +166,7 @@
 #supportDetail>section>.content>.contentTitle>.fa-angle-up{
     display: none;
 }
-#supportDetail>section>.content>.contentText{
+#supportDetail>section>.content>.contentText{ /* 콘텐츠 내용 */
 	margin: 2% 0px;
 	display: none;
 }
