@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <title>지역별 숙소</title>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/accommodations/cityaccomo.css">
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/accommodations/accommo.css">
+        <link rel="stylesheet" type="text/css" href="accommo.css">
     </head>
 
 
