@@ -5,6 +5,11 @@
     box-sizing: border-box;
     color: #000;
 }
+button{
+	background-color: #fff0;
+    border: none;
+	cursor: pointer;
+}
 
 /* 축제행사 메인페이지 : festival.jsp */
 #fastivalMain{
@@ -12,10 +17,10 @@
     height: max-content;
     display: flex;
     flex-direction: column;
+    padding: 0px 2%;
 }
 #fastivalMain>.search{ /* 상단 검색창 */
     padding: 40px 1% 10px;
-    margin-right: 1%;
     margin-left: auto;
     border-bottom: solid 1px #87bee585;
     display: flex;
@@ -36,16 +41,178 @@
     color: #969696;
 }
 #fastivalMain>.search>button{ /* 검색버튼 */
-    background-color: #fff0;
-    border: none;
     font-size: 16px;
-    cursor: pointer;
 }
 #fastivalMain>.select{
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 40px;
 }
-#fastivalMain>.select>button{
+#fastivalMain>.select>.selectDate, #fastivalMain>.select>div{
+    width: 28%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    background-color: #87bee585;
+    border: solid 1px #969696;
+    border-radius: 8px;
+}
+#fastivalMain>.select>.selectDate>#dateInput{ /* 날짜 선택 버튼 */
+	border: none;
+	width: 70%;
+	height: 100%;
+    padding: 20px 0px;
+    position: relative;
+    background: url(./downIcon.PNG) no-repeat right / 20px auto;
+    font-size: 15px;
+}
+#fastivalMain>.select>.selectDate>#dateInput::-webkit-clear-button,
+#fastivalMain>.select>.selectDate>#dateInput::-webkit-inner-spin-button{
+    display: none;
+}
+#fastivalMain>.select>.selectDate>#dateInput::-webkit-calendar-picker-indicator{ /* 날짜 선택하는 영역을 넓히기 위함 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+}
+#fastivalMain>.select>.selectDate>#dateInput::before{ /* placeholder를 커스텀 */
+	content: attr(data-placeholder);
+	width: 100%;
+}
+#fastivalMain>.select>.selectDate>#dateInput:focus::before,
+#fastivalMain>.select>.selectDate>#dateInput:valid::before{ /* 선택하면 placeholder를 사라지게 함 */
+	display: none;
+}
+#fastivalMain>.select>div>select{ /* select(지역, 카테고리) */
+	border: none;
+	width: 70%;
+	height: 100%;
+    padding: 20px 0px;
+    background-color: #fff0;
+    font-size: 15px;
+}
+#fastivalMain>.select>div>select:focus{
+    outline: none;
+}
+#fastivalMain>.select>.selectRefresh{ /* 새로고침 버튼 */
+	width: 6%;
+    border: solid 1px #969696;
+    border-radius: 8px;
+}
+#fastivalMain>.select>.selectRefresh>i{
+	color: #6e6e6e;
+}
+#fastivalMain>.duration{ /* 진행중/진행예정 */
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+}
+#fastivalMain>.duration>button{
+    margin: 20px 0px;
+    width: 46%;
+    border: solid 1px #969696;
+    padding: 10px 10%;
+    border-radius: 8px;
+    font-size: 1vw;
+}
+#fastivalMain>.fastivallist{ /* 축제 리스트 */
     width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+#fastivalMain>.fastivallist>.fastivalitem{
+    width: 23%;
+    height: 300px;
+}
+#fastivalMain>.fastivallist>.fastivalitem>.itemImg{
+    width: 100%;
+    height: 280px;
+    background: url(./cat.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+}
+#fastivalMain>.fastivallist>.fastivalitem>.itemImg>.hiddenItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: #6e6e6e85;
+}
+#fastivalMain>.fastivallist>.fastivalitem>.itemImg>.hiddenItem>div{
+	width: 100%;
+    align-self: flex-start;
+    font-weight: bold;
+}
+#fastivalMain>.fastivallist>.fastivalitem>.itemImg>.hiddenItem>button{
+    background-color: #fff;
+    padding: 3%;
+    border-radius: 8px;
+}
+#fastivalMain>.fastivallist>.fastivalitem>.itemImg+div{
+    padding: 0px 3%;
+}
+#fastivalMain>.fastivalNonelist{ /* 검색 후 축제 리스트 결과가 없을 때 */
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #87bee585;
+    border-radius: 20px;
+}
+#fastivalMain>.fastivalNonelist>p{
+	margin: 15px 0px;
+}
+#fastivalMain>.recommend{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+#fastivalMain>.recommend>.recTitle{
+    background-color: #87bee585;
+    padding: 20px 10%;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 1px #969696; 
+}
+#fastivalMain>.recommend>.recList{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+#fastivalMain>.recommend>.recList>.recItemImg{
+    background: url(./cat.jpg) no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    width: 19%;
+    border-radius: 8px;
+    display: flex;
+    align-items: end;
+}
+#fastivalMain>.recommend>.recList>.recItemImg>div{
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 5%;
+}
+#fastivalMain>.recommend>.recList>.recItemImg>div>button{
+    border: solid 1px #000;
+    border-radius: 20px;
+    padding: 2%;
 }

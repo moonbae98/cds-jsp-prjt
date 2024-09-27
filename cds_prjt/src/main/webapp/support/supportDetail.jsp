@@ -40,7 +40,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 </div>
                 <hr>
                 <div class="content">
-                    <div class="contentTitle" onclick="toggleContent('contentText1', this)">
+                    <div class="contentTitle">
                         <div>게시글5</div>
                         <i class="fa-solid fa-angle-up"></i>
                         <i class="fa-solid fa-angle-down"></i>
@@ -57,7 +57,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 </div>
                 <hr>
                 <div class="content">
-                    <div class="contentTitle" onclick="toggleContent('contentText2', this)">
+                    <div class="contentTitle">
                         <div>게시글4</div>
                         <i class="fa-solid fa-angle-up"></i>
                         <i class="fa-solid fa-angle-down"></i>
@@ -75,6 +75,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     </div>
 
     <script>
+        //왼쪽 네비게이션 해당 페이지 이동
         const goTopage = (select) => {
             switch(select){
 				case 'notice': window.location.href = `supportDetail.jsp?supportSelect=notice`; break;
@@ -82,17 +83,23 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 				case 'question': window.location.href = `supportDetail.jsp?supportSelect=question`; break;
                 case 'inquiry': window.location.href = `supportDetail.jsp?supportSelect=inquiry`;
 			}
-        }
-
-        const toggleContent = (id, title) => {
-            const $content = $('#' + id);
-            const $upIcon = $(title).children('.fa-angle-up');
-            const $downIcon = $(title).children('.fa-angle-down');
-
-            $content.toggle();
-            $upIcon.toggle();
-            $downIcon.toggle();
         };
+
+        $(function(){
+
+            //고객센터 메인페이지로 이동
+            $("h2").click(function(){
+                window.location.href = `support.jsp`;
+            })
+
+            //게시글 toggle
+            $(".contentTitle").click(function(){
+                $(this).next().toggle();
+                $(this).find("i").toggle();
+            });
+            $(".contentText").hide();
+            $(".fa-angle-up").hide();
+        });
 
     </script>
 </body>
