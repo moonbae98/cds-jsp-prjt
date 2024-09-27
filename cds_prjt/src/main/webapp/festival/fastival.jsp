@@ -22,36 +22,59 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 </button>
             </div>
             <div class="select">
-                <button class="selectDate">
-                    <i class="fa-regular fa-calendar"></i>
-                    <div>날짜</div>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-                <input type="date" class="inputDate" style="display: none;">
-                <button class="selectArea">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>지역</div>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-                <button class="selectArea">
-                    <i class="fa-regular fa-folder"></i>
-                    <div>카테고리</div>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
+                <div class="selectDate">
+                	<i class="fa-regular fa-calendar calendar-icon"></i>
+	                <input type="date" id="dateInput" data-placeholder="날짜">
+                </div>
+                <div class="selectArea">
+                	<i class="fa-solid fa-location-dot"></i>
+	                <select class="areaSelect">
+	                    <option value="">지역</option>
+	                    <option value="0">서울</option>
+	                    <option value="0">인천</option>
+	                    <option value="0">대전</option>
+	                    <option value="0">대구</option>
+	                    <option value="0">광주</option>
+	                    <option value="0">부산</option>
+	                    <option value="0">울산</option>
+	                    <option value="0">세종시</option>
+	                    <option value="0">경기도</option>
+	                    <option value="0">강원특별자치도</option>
+	                    <option value="0">충청북도</option>
+	                    <option value="0">충청남도</option>
+	                    <option value="0">경상북도</option>
+	                    <option value="0">경상남도</option>
+	                    <option value="0">전북특별자치도</option>
+	                    <option value="0">전라남도</option>
+	                    <option value="0">제주도</option>
+	                </select>
+                </div>
+                <div class="selectCategory">
+                	<i class="fa-regular fa-folder"></i>
+	                <select class="categorySelect">
+	                    <option value="">카테고리</option>
+	                    <option value="0">나들이</option>
+	                    <option value="0">가을꽃</option>
+	                    <option value="0">야경</option>
+	                    <option value="0">문화예술</option>
+	                    <option value="0">미디어아트</option>
+	                    <option value="0">빛</option>
+	                </select>
+                </div>
                 <button class="selectRefresh">
                 	<i class="fa-solid fa-arrows-rotate"></i>
                 </button>
             </div>
             <div class="duration">
-                <button># 진행중</button>
-                <button># 진행예정</button>
+                <button class="ing"># 진행중</button>
+                <button class="soon"># 진행예정</button>
             </div>
             <div class="fastivallist">
                 <div class="fastivalitem">
                     <div class="itemImg">
                         <div class="hiddenItem">
                             <div>충청남도 아산시</div>
-                            <div>2024.09.16~2024.09.30</div>
+                            <p>2024.09.16~2024.09.30</p>
                             <button>바로가기</button>
                         </div>
                     </div>
@@ -61,7 +84,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="itemImg">
                         <div class="hiddenItem">
                             <div>충청남도 천안시</div>
-                            <div>2024.09.16~2024.09.30</div>
+                            <p>2024.09.16~2024.09.30</p>
                             <button>바로가기</button>
                         </div>
                     </div>
@@ -71,7 +94,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="itemImg">
                         <div class="hiddenItem">
                             <div>충청남도 보령시</div>
-                            <div>2024.09.16~2024.09.30</div>
+                            <p>2024.09.16~2024.09.30</p>
                             <button>바로가기</button>
                         </div>
                     </div>
@@ -81,7 +104,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="itemImg">
                         <div class="hiddenItem">
                             <div>충청남도 공주시</div>
-                            <div>2024.09.16~2024.09.30</div>
+                            <p>2024.09.16~2024.09.30</p>
                             <button>바로가기</button>
                         </div>
                     </div>
@@ -96,34 +119,40 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <div class="recTitle">이런 축제는 어때요?</div>
                 <div class="recList">
                     <div class="recItemImg">
-                        <div class="recItemText">
-                            <div>A 축제</div>
-                            <div>2024.09.16~2024.09.30</div>
-                            <div>충청남도 천안시</div>
+                        <div>
+                            <div class="recItemText">
+                                <div>A 축제</div>
+                                <div>2024.09.16~2024.09.30</div>
+                                <div>충청남도 천안시</div>
+                            </div>
+                            <button class="recItemText">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
                         </div>
-                        <button>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
                     </div>
                     <div class="recItemImg">
-                        <div class="recItemText">
-                            <div>B 축제</div>
-                            <div>2024.09.16~2024.09.30</div>
-                            <div>충청남도 아산시</div>
+                        <div>
+                            <div class="recItemText">
+                                <div>B 축제</div>
+                                <div>2024.09.16~2024.09.30</div>
+                                <div>충청남도 아산시</div>
+                            </div>
+                            <button class="recItemText">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
                         </div>
-                        <button>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
                     </div>
                     <div class="recItemImg">
-                        <div class="recItemText">
-                            <div>C 축제</div>
-                            <div>2024.09.16~2024.09.30</div>
-                            <div>충청남도 보령시</div>
+                        <div>
+                            <div class="recItemText">
+                                <div>C 축제</div>
+                                <div>2024.09.16~2024.09.30</div>
+                                <div>충청남도 보령시</div>
+                            </div>
+                            <button class="recItemText">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
                         </div>
-                        <button>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -131,11 +160,56 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     </div>
 
     <script>
-	    $(function() {
-	        $('.selectDate').click(function() {
-	            $('.inputDate').trigger('click'); // 날짜 선택 창 띄우기
-	        });
-	    });
+        $(function(){
+            //검색 선택창 초기화
+            $(".selectRefresh").click(()=>{
+                $("#dateInput").val("");
+                $(".areaSelect").val("");
+                $(".categorySelect").val("");
+            });
+
+            //진행중/예정 버튼
+            $(".duration > button").click(function(){
+                let isColor = $(this).css("backgroundColor") !== "rgba(255, 255, 255, 0)";
+                // 모든 버튼의 배경을 초기화
+                $(".duration button").css("backgroundColor", "#fff0");
+                // 클릭한 버튼의 배경색을 토글
+                if (!isColor) {
+                    $(this).css("backgroundColor", "#87bee541");
+                }
+            });
+
+            //축제 리스트 hover 효과
+            $(".fastivalitem > .itemImg > .hiddenItem").hide();
+            $(".fastivalitem > .itemImg").hover(
+                function(){
+                    $(this).find(".hiddenItem").show();
+                },
+                function(){
+                    $(this).find(".hiddenItem").hide();
+                }
+            );
+            
+            //검색결과 없을 때 p태그
+            $(".fastivalNonelist>p:eq(0)").css({
+            	fontSize: "25px",
+                fontWeight: "bold"
+            });
+            
+            //이런축제는어때요
+            $(".recList > .recItemImg:eq(0)").css("width", "57%"); //첫번째 요소 크게
+            $(".recList > .recItemImg .recItemText").hide();
+            $(".recList > .recItemImg:eq(0) .recItemText").show();
+
+            //이런축제는어때요 mouseover 효과
+            $(".recList > .recItemImg").mouseover(function(){
+                $(".recList > .recItemImg").css("width", "19%");
+                $(this).css("width", "57%");
+                $(".recList > .recItemImg .recItemText").hide();
+				$(this).find(".recItemText").show();
+            });
+        });
+          
     </script>
 </body>
 </html>

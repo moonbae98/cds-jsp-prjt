@@ -107,6 +107,9 @@
 	padding-bottom: 30px;
     margin-left: 5%;
 }
+#supportDetail>aside>h2:hover{
+    cursor: pointer;
+}
 #supportDetail>aside>h2+hr{
 	border: solid 4px #969696;
     border-radius: 10px;
@@ -163,10 +166,6 @@
 	font-weight: 550;
 	color: #6e6e6e;
 }
-#supportDetail>section>.content>.contentTitle>.fa-angle-up{
-    display: none;
-}
 #supportDetail>section>.content>.contentText{ /* 콘텐츠 내용 */
 	margin: 2% 0px;
-	display: none;
 }
