@@ -216,3 +216,124 @@ button{
     border-radius: 20px;
     padding: 2%;
 }
+
+#modalOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000075;
+}
+/* 축제행사 메인페이지 모달창 : festival.jsp */
+#fastivalModal{
+    width: 80%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    position: absolute;
+    top: 80px;
+    right: 10%;
+    background-color: #fff;
+    border: solid 1px #969696; 
+    border-radius: 30px;
+    overflow: auto;
+}
+#fastivalModal>.fastivalName{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#fastivalModal>.fastivalName>button{
+    border-radius: 30px;
+    border: solid 1px #969696; 
+    padding: 0.5% 1%;
+}
+#fastivalModal>.fastivalName>button>i{
+    font-size: 30px;
+    color: #6e6e6e;
+}
+#fastivalModal>.modalDate{
+    display: flex;
+    margin-top: 40px;
+}
+#fastivalModal>.modalDate>p{
+    margin: 3px;
+}
+#fastivalModal>.modalStatus{
+    display: flex;
+    margin-bottom: 30px;
+}
+#fastivalModal>.modalStatus>.modalIng{
+    background-color: #87bee585;
+    width: 15%;
+    padding: 1%;
+    text-align: center;
+    border-radius: 10px;
+}
+#fastivalModal>.modalMid{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#fastivalModal>.modalMid>button{
+    background-color: #87bee585;
+    border-radius: 20px;
+    padding: 1%;
+    margin: 1%;
+}
+#fastivalModal>.modalMid>button>i{
+    font-size: 16px;
+}
+#fastivalModal>.modalMid>.modalImgContainer{
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0px;
+}
+#fastivalModal>.modalMid>.modalImgContainer>.modalImgs{
+    display: flex;
+}
+#fastivalModal>.modalMid>.modalImgContainer>.modalImgs>.modalImg{
+    flex: 0 0 200px; /* 고정 너비 200px */
+    height: 200px;
+    background-color: #87bee585;
+    border: solid 1px #969696; 
+    margin: 0px 3%;
+}
+#fastivalModal>.modalContentBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#fastivalModal>.modalContentBox>button{
+    align-self: flex-end;
+    margin: 10px 0px;
+}
+#fastivalModal>.modalContentBox>.modalContentPlus{
+    display: flex;
+}
+#fastivalModal>.modalContentBox>.modalContentPlus>.plusLeft,
+#fastivalModal>.modalContentBox>.modalContentPlus>.plusRight{
+    width: 100%;
+}
+#fastivalModal>.modalContentBox+hr{
+    margin: 30px 0px;
+}
+#fastivalModal>.modalMap>h3{
+    margin: 20px 0px;
+}
+#fastivalModal>.modalMap>.map{
+    width: 100%;
+    height: 250px;
+    background-color: #87bee585;
+    margin: 20px 0px 10px;
+}
+#fastivalModal>.modalMap>.mapContent{
+    display: flex;
+    justify-content: space-between;
+}
+#fastivalModal>.modalMap>.mapContent>p{
+    font-size: 14px;
+}
