@@ -70,7 +70,7 @@ public class DBCP {
 			Context ctx=(Context)initCtx.lookup("java:comp/env");
 //			server.xml의 resource를 참조 할 수 있는 context객체를 얻음
 			
-			DataSource source= (DataSource)ctx.lookup("oracle_dbcp");
+			DataSource source= (DataSource)ctx.lookup("mysql_dbcp");
 //			DBCP를 지원하는 DataSOurce객체를 얻음
 //			DataSource: 물리적인 데이터 소스(커넥션 풀)와의 연결을 생성해 주는 자바 표준 인터 페이스
 			
