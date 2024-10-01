@@ -157,6 +157,79 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 </div>
             </div>
         </div>
+        <div id="modalOverlay"></div>
+        <div id="fastivalModal">
+            <div class="fastivalName">
+                <h1>축제명</h1>
+                <button class="closeModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modalDate">
+                <p>행사시작일</p>
+                <p>~</p>
+                <p>행사종료일</p>
+            </div>
+            <div class="modalStatus">
+                <div class="modalIng">진행중</div>
+                <div class="modalIng">진행예정</div>
+                <div class="modalIng">진행종료</div>
+            </div>
+            <div class="modalMid">
+                <button class="prevBtn">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <div class="modalImgContainer">
+                    <div class="modalImgs">
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                        <div class="modalImg"></div>
+                    </div>
+                </div>
+                <button class="nextBtn">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+            <div class="modalContentBox">
+                <p class="modalContent">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, 
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+                    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.
+                </p>
+                <button><i class="fa-solid fa-plus"></i> 더보기</button>
+                <div class="modalContentPlus">
+                    <div class="plusLeft">
+                        <p>예매처 : 예매처</p>
+                        <p>이용요금 : 이용요금</p>
+                        <p>할인정보 : 할인정보</p>
+                    </div>
+                    <div class="plusRight">
+                        <p>행사홈페이지 : 링크</p>
+                        <p>행사장위치안내 : 지역</p>
+                        <p>행사장소 : 장소</p>
+                        <p>행사프로그램 : 내용</p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="modalMap">
+                <h3>길찾기</h3>
+                <div class="map"></div>
+                <div class="mapContent">
+                    <p>주소</p>
+                    <p>주최자정보</p>
+                    <p>전화번호</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -208,6 +281,50 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 $(".recList > .recItemImg .recItemText").hide();
 				$(this).find(".recItemText").show();
             });
+
+            //modal
+            $("#fastivalModal").hide();
+            $("#modalOverlay").hide();
+            
+            $(".fastivalitem > .itemImg > .hiddenItem > button , .recList > .recItemImg > div > button").click(function(){
+                $("#fastivalModal").show();
+                $("#modalOverlay").show();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 부드러운 스크롤
+                });
+            });
+
+            $(".closeModal").click(function(){
+            	$("#fastivalModal").hide();
+                $("#modalOverlay").hide();
+            });
+            
+            //모달 내 이미지 효과
+            let currentIndex = 0;
+            const totalImages = $('.modalImg').length;
+            const imageWidth = 200;
+
+            $('.prevBtn').on('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateImagePosition();
+                }
+            });
+            $('.nextBtn').on('click', function() {
+                if (currentIndex < totalImages - 1) {
+                    currentIndex++;
+                    updateImagePosition();
+                }
+            });
+            function updateImagePosition() {
+                const offset = -currentIndex * imageWidth;
+                $('.modalImgs').css({
+                    transform: `translateX(${offset}px)`,
+                    transition: 'transform 0.3s ease' // 부드러운 이동 효과
+                });
+            };
+
         });
           
     </script>
