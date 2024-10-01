@@ -50,6 +50,7 @@ section {
     font-size: 40px;
     margin: 0px 50px 0px 0px;
 }
+
 .desheader_2 {
     display: flex;
     justify-content: center;
@@ -90,7 +91,8 @@ section {
     color: gray;
     font-weight: bold;
     border: none;
-    background-color: transparent;/* 배경색 투명 =>transparent */
+    background-color: transparent;
+    /* 배경색 투명 =>transparent */
     position: relative;
     bottom: 310px;
 }
@@ -146,12 +148,12 @@ section {
     /* 사진들 사이드 간격값*/
 }
 
-.desimg1>div{
+.desimg1>div {
     width: 100%;
 }
 
 /* 여행지 사진에 대한 값 */
-.desimg1>div>.desimg2{
+.desimg1>div>.desimg2 {
     width: 100%;
     /* 컨테이너 너비를 100%로 설정 */
     height: 200px;
