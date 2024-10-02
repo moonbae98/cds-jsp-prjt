@@ -181,14 +181,14 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 </button>
                 <div class="modalImgContainer">
                     <div class="modalImgs">
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
-                        <div class="modalImg"></div>
+                        <div class="modalImg">1</div>
+                        <div class="modalImg">2</div>
+                        <div class="modalImg">3</div>
+                        <div class="modalImg">4</div>
+                        <div class="modalImg">5</div>
+                        <div class="modalImg">6</div>
+                        <div class="modalImg">7</div>
+                        <div class="modalImg">8</div>
                     </div>
                 </div>
                 <button class="nextBtn">
@@ -300,22 +300,19 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 $("#modalOverlay").hide();
             });
             
-            //모달 내 이미지 효과
+            //모달 내 이미지 슬라이드 효과
             let currentIndex = 0;
             const totalImages = $('.modalImg').length;
             const imageWidth = 200;
 
-            $('.prevBtn').on('click', function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateImagePosition();
-                }
+            $(".prevBtn").click(() => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+                updateImagePosition();
             });
-            $('.nextBtn').on('click', function() {
-                if (currentIndex < totalImages - 1) {
-                    currentIndex++;
-                    updateImagePosition();
-                }
+
+            $(".nextBtn").click(() => {
+                currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+                updateImagePosition();
             });
             function updateImagePosition() {
                 const offset = -currentIndex * imageWidth;
@@ -323,7 +320,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     transform: `translateX(${offset}px)`,
                     transition: 'transform 0.3s ease' // 부드러운 이동 효과
                 });
-            };
+            }
 
         });
           

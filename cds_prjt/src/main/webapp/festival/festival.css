@@ -298,9 +298,10 @@ button{
 #fastivalModal>.modalMid>.modalImgContainer>.modalImgs>.modalImg{
     flex: 0 0 200px; /* 고정 너비 200px */
     height: 200px;
-    background-color: #87bee585;
     border: solid 1px #969696; 
     margin: 0px 3%;
+    background: url(./cat.jpg) no-repeat center center;
+    background-size: cover;
 }
 #fastivalModal>.modalContentBox{
     display: flex;
