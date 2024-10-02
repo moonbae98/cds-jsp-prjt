@@ -1,0 +1,305 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainicon {
+    background-color: transparent;
+    border: none;
+}
+
+.mainicon>img {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.mypagemodal {
+    display: none;
+    /* 처음에는 모달이 보이지 않음 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 마이페이지 모달 메인화면 */
+.mypagemain {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    height: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.mypagemain-top {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* 부모 폭 100%로 설정하여 중앙 정렬효과를 극대화함(자주 쓸 것) */
+    margin: 10px 0px 10px 0px;
+    position: relative;
+}
+
+.mypagemain-top>span {
+    position: absolute;
+    right: 5px;
+}
+
+.hr1 {
+    border: none;
+    /* 기본 테두리 제거 */
+    height: 1px;
+    /* 선의 두께 설정 */
+    background-color: gray;
+    /* 선의 색상을 회색으로 설정 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* 그림자 추가 */
+    margin: 5px 0;
+    /* 위아래 여백 설정 */
+}
+
+.mypagemain-middle1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mypagemain-middle1>div {
+    border: none;
+
+}
+
+.mypagemain-middle1>div>img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 15px 0px 0px 0px;
+}
+
+.mypagemain-middle1>p {
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+}
+
+.mypagemain-middle1>button {
+    background-color: rgb(239, 239, 239);
+    border: none;
+    border-radius: 10px;
+    margin: 0px 0px 20px 0px;
+    width: 80px;
+}
+
+.mypagemain-middle-icon1 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.mypagemain-middle-icon1>div>button {
+    border: none;
+    background-color: transparent;
+}
+
+.mypagemain-middle-icon1>div>button>img {
+    width: 50px;
+    height: 50px;
+
+}
+
+.mypagemain-middle-icon2 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.mypagemain-middle-icon2>div>button {
+    border: none;
+    background-color: transparent;
+}
+
+.mypagemain-middle-icon2>div>button>img {
+    width: 50px;
+    height: 50px;
+
+
+}
+
+.mypagemain-low {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.mypagemain-low>button {
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: rgb(239, 239, 239);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* 메인 end */
+
+/* 내 정보 start */
+.mypagemyinfo {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    height: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.mypagemyinfo-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mypagemyinfo-top>h3 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.mypagemyinfo-top>div {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.mypagemyinfo-top>div>img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+}
+
+.mypagemyinfo-top>p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.mypagemyinfo-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mypagemyinfo-middle>input {
+    width: 300px;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 0.5px solid rgb(191, 191, 191);
+    ;
+}
+
+.mypagemyinfo-low {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.mypagemyinfo-low>button {
+    width: 100px;
+    height: 30px;
+    margin-top: 40px;
+    border: 0.5px solid rgb(191, 191, 191);
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* 내정보 end */
+
+/* 장바구니 start */
+.mypagecart {
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+
+}
+
+.mypagecart-top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.mypagecart-top>h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* 쿠폰 start */
+.mypagecoupon {
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+
+}
+
+.mypagecoupon-top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.mypagecoupon-top>h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mypagecoupon-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.mypagecoupon-middle>h2{
+    margin-top: 25%;
+    font-size: 30px;
+}
+
+.mypagecoupon-middle>p{
+    color:gray;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* 쿠폰 end */
