@@ -25,6 +25,11 @@
             font-size: 24px;
             color: #333;
         }
+        h4 {
+            font-size: 20px; /* 글자 크기를 키움 */
+            color: #4caff6; /* 하늘색으로 변경 */
+            margin-bottom: 10px;
+        }
         table {
             width: 100%;
             margin-bottom: 20px;
@@ -113,11 +118,23 @@
             align-items: center;
         }
         #email_prefix {
-            width: 60%;
+            width: 50%;
             margin-right: 10px;
         }
         #email_domain {
-            width: 40%;
+            width: 120px;
+            height: 40px;
+        }
+        #custom_email_domain {
+            width: 120px;
+            margin-left: 10px;
+            display: none;
+        }
+        .separator-line {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -168,12 +185,14 @@
                         <td>
                             <div class="email-input">
                                 <input type="text" id="email_prefix" placeholder="이메일을 입력해주세요." required>
-                                <select id="email_domain">
+                                <select id="email_domain" onchange="toggleEmailDomainInput()">
                                     <option value="@naver.com">@naver.com</option>
                                     <option value="@gmail.com">@gmail.com</option>
                                     <option value="@daum.net">@daum.net</option>
                                     <option value="@nate.com">@nate.com</option>
+                                    <option value="direct">직접입력</option>
                                 </select>
+                                <input type="text" id="custom_email_domain" placeholder="직접 입력">
                             </div>
                         </td>
                     </tr>
@@ -196,6 +215,9 @@
                         <td><input type="text" name="address" placeholder="상세 주소를 입력해주세요." required></td>
                     </tr>
                 </table>
+
+                <!-- 약관동의 전 선 추가 -->
+                <hr class="separator-line">
 
                 <h4>약관동의</h4>
                 <div class="checkbox-group">
@@ -234,12 +256,29 @@
         });
     }
 
+    // 이메일 도메인 선택 시 '직접입력'을 선택하면 입력 필드 표시
+    function toggleEmailDomainInput() {
+        const emailDomainSelect = document.getElementById('email_domain');
+        const customEmailDomain = document.getElementById('custom_email_domain');
+        
+        if (emailDomainSelect.value === 'direct') {
+            customEmailDomain.style.display = 'inline-block';
+            customEmailDomain.required = true; // 직접 입력 필드 필수 입력
+        } else {
+            customEmailDomain.style.display = 'none';
+            customEmailDomain.required = false;
+        }
+    }
+
     // 이메일 전체 주소 결합
     document.querySelector('form').addEventListener('submit', function(event) {
         const emailPrefix = document.getElementById('email_prefix').value;
-        const emailDomain = document.getElementById('email_domain').value;
+        const emailDomainSelect = document.getElementById('email_domain').value;
+        const customEmailDomain = document.getElementById('custom_email_domain').value;
+
+        let emailDomain = emailDomainSelect === 'direct' ? customEmailDomain : emailDomainSelect;
         let fullEmail = emailPrefix + emailDomain;
-        
+
         // 이메일을 숨겨진 input에 저장하고 form 전송
         const emailInput = document.createElement('input');
         emailInput.type = 'hidden';
