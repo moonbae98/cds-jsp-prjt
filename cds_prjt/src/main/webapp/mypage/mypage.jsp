@@ -54,7 +54,7 @@
                         <button id="couponBtn"><img src="쿠폰.png" alt="쿠폰"></button>
                         <p>쿠폰함</p>
                     </div>
-                    <div>
+                    <div style="margin-left: 10px;">
                         <button id="queryBtn"><img src="문의내역.png" alt="문의하기"></button>
                         <p>문의하기</p>
                     </div>
@@ -75,7 +75,6 @@
             <div id="infoDiv" class="mypagemyinfo">
                 <div class="mypagemyinfo-top">
                     <h3>회원정보</h3>
-                    <hr>
                     <div>
                         <img src="mypage내사진.jpg" alt="마이페이지 내사진">
                     </div>
@@ -85,11 +84,9 @@
                 <div class="mypagemyinfo-middle">
                     <input type="text" placeholder="  이름">
                     <input type="text" placeholder="  이메일">
-                    <input type="text" placeholder="  아이디" readonly>
                     <input type="text" placeholder="  비밀번호">
                     <input type="text" placeholder="  비밀번호확인">
                     <input type="text" placeholder="  연락처">
-                    <input type="text" placeholder="  주소">
                 </div>
                 <div class="mypagemyinfo-low">
                     <button>정보수정</button>
@@ -97,9 +94,19 @@
                 </div>
             </div>
             <!-- 좋아요 / 찜 -->
-            <div id="likeDiv" style="display: none; background-color: orange; width: 500px; height: 500px;">
-                <h3>좋아요/찜</h3>
-                <p>좋아요 및 찜 목록이 여기에 표시됩니다.</p>
+            <div id="likeDiv" class="mypagelike">
+                <!-- 상단 -->
+                <div class="mypagelike-top">
+                    <div>
+                        <button><h3>좋아요</h3></button>
+                    </div>
+                    <div>
+                        <button><h3>찜</h3></button>
+                    </div>
+                   
+
+                </div>
+                <hr>
             </div>
             <!-- 장바구니 -->
             <div id="cartDiv" class="mypagecart">
@@ -107,16 +114,81 @@
                     <h3>장바구니</h3>
                 </div>
                 <hr>
-                <div class="mypagecart-body">
-                    <input type="checkbox">
-                    <p>함경도 평양냉면 얌얌</p>
+                <div class="mypagecart-middle">
+                    <!-- 구매 카테고리 -->
+                    <p>카테고리</p>
+                    <!-- 담아둔 상품목록 -->
+                    <div class="mypagecart-price">
+                        <img src="mypage내사진.jpg" alt="">
+                        <div>
+                            <p>상품명</p>
+                            <p>가격</p>
+                        </div>
+                    </div>
+                    <!-- 구매 카테고리 -->
+                    <p>카테고리</p>
+                    <!-- 담아둔 상품목록 -->
+                    <div class="mypagecart-price">
+                        <img src="mypage내사진.jpg" alt="">
+                        <div>
+                            <p>상품명</p>
+                            <p>가격</p>
+                        </div>
+                    </div>
+                    <!-- 구매 카테고리 -->
+                    <p>카테고리</p>
+                    <!-- 담아둔 상품목록 -->
+                    <div class="mypagecart-price">
+                        <img src="mypage내사진.jpg" alt="">
+                        <div>
+                            <p>상품명</p>
+                            <p>가격</p>
+                        </div>
+                    </div>
+                    <!-- 구매 카테고리 -->
+                    <p>카테고리</p>
+                    <!-- 담아둔 상품목록 -->
+                    <div class="mypagecart-price">
+                        <img src="mypage내사진.jpg" alt="">
+                        <div>
+                            <p>상품명</p>
+                            <p>가격</p>
+                        </div>
+                    </div>
+                    <!-- 구매 카테고리 -->
+                    <p>카테고리</p>
+                    <!-- 담아둔 상품목록 -->
+                    <div class="mypagecart-price">
+                        <img src="mypage내사진.jpg" alt="">
+                        <div>
+                            <p>상품명</p>
+                            <p>가격</p>
+                        </div>
+                    </div>
+
+                    <hr>
                 </div>
+
+                <div class="mypagecart-low">
+                    <div>
+                        <p>총 액</p>
+                        <p>할인금액</p>
+                        <p>결제금액</p>
+                    </div>
+                    <div>
+                        <p>50000원</p>
+                        <p>-2000원</p>
+                        <p>48000원</p>
+                    </div>
+                </div>
+
 
             </div>
             <!-- 결제 예약 -->
-            <div id="paymentDiv" style="display: none; background-color: green; width: 500px; height: 500px;">
-                <h3>결제 및 예약 확인</h3>
-                <p>결제 내역 및 예약 확인 정보가 여기에 표시됩니다.</p>
+            <div id="paymentDiv" class="mypagepay">
+                <div class="mypagepay-top">
+                    <h3>결제 및 예약 내역</h3>
+                </div>
             </div>
             <!-- 쿠폰 -->
             <div id="couponDiv" class="mypagecoupon">
@@ -130,14 +202,24 @@
                 </div>
             </div>
             <!-- 문의 -->
-            <div id="queryDiv" style="display: none; background-color: blue; width: 500px; height: 500px;">
-                <h3>문의하기</h3>
-                <p>문의 내역이 여기에 표시됩니다.</p>
+            <div id="queryDiv" class="mypagequery">
+                <div class="mypagequery-top">
+                    <h3>문의하기</h3>
+                </div>
+                <div class="mypagequery-middle">
+                    <a href="https://pf.kakao.com/_Lcpln">
+                    <button>
+                        떠나자 카카오 문의채널
+                    </button>
+                    </a>
+
+                </div>
             </div>
             <!-- 작성 -->
-            <div id="postDiv" style="display: none; background-color: purple; width: 500px; height: 500px;">
-                <h3>작성내역</h3>
-                <p>작성한 내용이 여기에 표시됩니다.</p>
+            <div id="postDiv" class="mypagepost">
+                <div class="mypagepost-top">
+                    <h3>작성내역</h3>
+                </div>
             </div>
         </div>
 
