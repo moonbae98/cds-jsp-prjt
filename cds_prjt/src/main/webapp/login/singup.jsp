@@ -203,25 +203,17 @@
                             <input type="radio" name="gender" value="여자" required> 여자
                         </td>
                     </tr>
-                    <tr>
-                        <td>주소</td>
-                        <td>
-                            <input type="text" name="zipcode" placeholder="우편번호" required>
-                            <button type="button" class="dup-check-btn">주소찾기</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="text" name="address" placeholder="상세 주소를 입력해주세요." required></td>
-                    </tr>
+                    
                 </table>
 
                 <!-- 약관동의 전 선 추가 -->
-                <hr class="separator-line">
-
+                 <hr class="separator-line">
+                
                 <h4>약관동의</h4>
                 <div class="checkbox-group">
                     <label><input type="checkbox" id="allAgree" onclick="toggleAllCheckboxes(this)"> 회원약관 및 개인정보처리방침 모두 동의합니다. [선택항목 포함]</label>
+                    <!-- 얇은 선 추가 -->
+
                     <label><input type="checkbox" class="terms-checkbox" name="use_agree" required> [필수] 홈페이지 이용약관 동의</label>
                     <label><input type="checkbox" class="terms-checkbox" name="use_age" required> [필수] 만 14세 이상 확인</label>
                     <label><input type="checkbox" class="terms-checkbox" name="collect_agree" required> [필수] 개인정보 수집 및 이용목적에 대한 동의</label>
