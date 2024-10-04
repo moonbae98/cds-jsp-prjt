@@ -72,10 +72,20 @@
     position: relative;
 }
 
-.mypagemain-top>span {
+.mypagemain-top>span:nth-child(1){
     position: absolute;
-    right: 5px;
+    left: 5px;
+    cursor: pointer;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
 }
+
+.mypagemain-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
+}
+
 
 .hr1 {
     border: none;
@@ -217,6 +227,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 .mypagemyinfo-top>h3 {
@@ -241,6 +252,21 @@
 .mypagemyinfo-top>p {
     font-size: 14px;
     margin-bottom: 15px;
+}
+
+
+.mypagemyinfo-top>span:nth-child(1){
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
+}
+
+.mypagemyinfo-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
 }
 
 .mypagemyinfo-middle {
@@ -287,6 +313,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: none;
     overflow-y: auto; /* 수직 스크롤 추가 */
+    position: relative;
 }
 
 .mypagelike-top {
@@ -295,6 +322,7 @@
     align-items: center;
     text-align: center;
     margin-top: 0px;
+    position: relative;
 }
 .mypagelike-top>div{
     width: 190px;
@@ -308,6 +336,8 @@
     height: 50px;  
 
 }
+
+
 
 /* 좋아요 / 찜 end */
 
@@ -327,7 +357,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    
+    position: relative;
 }
 
 .mypagecart-top>h3 {
@@ -335,6 +365,19 @@
     margin-bottom: 20px;
 }
 
+.mypagemycart-top>span:nth-child(1){
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
+}
+
+.mypagemycart-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
+}
 .mypagecart-middle{
     display: flex;
     flex-direction: column;
@@ -397,12 +440,84 @@
     overflow-y: auto; /* 수직 스크롤 추가 */
 }
 
+.mypagepay>p{
+    margin: 0px 0px 10px 15px;
+}
+
 .mypagepay-top {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     margin-top: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mypagepay-top>span:nth-child(1){
+    position: absolute;
+    left: 5px;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
+    cursor: pointer;
+}
+
+.mypagepay-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
+}
+
+.mypagepay-middle-select{
+    margin: 10px 0px 10px 80%;
+    
+}
+.mypagepay-middle-select>select{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.mypagepay-middle-priceinfo{
+    display: flex;
+    width: 100%;
+}
+
+.mypagepay-middle-priceinfo>img{
+    width: 80px;
+    height: 80px;
+    margin:0px 5px 10px 15px;
+}
+
+.mypagepay-middle-payinfo{
+    display: none;
+}
+
+.mypagepay-middle-payinfo1{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: start;
+    
+}
+
+.mypagepay-middle-payinfo1>p{
+    justify-content: start;
+    position: relative;
+}
+.mypagepay-middle-payinfo2{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: end;
+    
+}
+.mypagepay-middle-payinfo2>p{
+    justify-content: end;
+}
+
+.mypagepay-middle-payinfo3{
+    display: flex;
 }
 /* 결제 예약 end */
 
@@ -422,6 +537,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    position: relative;
 }
 
 .mypagecoupon-top>h3 {
@@ -429,25 +545,59 @@
     margin-bottom: 20px;
 }
 
+.mypagecoupon-top>span:nth-child(1){
+    position: absolute;
+    left: 5px;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
+    cursor: pointer;
+}
+
+.mypagecoupon-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
+}
+
 .mypagecoupon-middle{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+   
+}
+
+.mypagecoupon-middle>div{
+display: flex;
+flex-direction: column;
+overflow: hidden;
+}
+
+.mypagecoupon-middle>div>div:nth-child(1){
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.mypagecoupon-middle>div>div:nth-child(1)>img{
+    width: 200px;
+    height: 100px;
+}
+.mypagecoupon-middle>div>div:nth-child(2){
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
     text-align: center;
     align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
 }
 
-.mypagecoupon-middle>h2{
-    margin-top: 25%;
-    font-size: 30px;
-}
 
-.mypagecoupon-middle>p{
-    color:gray;
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 5px;
-}
+
+
 
 /* 쿠폰 end */
 
@@ -468,6 +618,21 @@
     text-align: center;
     align-items: center;
     margin-top: 20px;
+    position: relative;
+}
+
+.mypagequery-top>span:nth-child(1){
+    position: absolute;
+    left: 5px;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
+    cursor: pointer;
+}
+
+.mypagequery-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
 }
 
 .mypagequery-middle {
@@ -517,6 +682,20 @@
     text-align: center;
     align-items: center;
     margin-top: 20px;
+    position: relative;
+}
+.mypagepost-top>span:nth-child(1){
+    position: absolute;
+    left: 5px;
+    text-align: left; /* 텍스트 정렬 문제를 방지 */
+    cursor: pointer;
+}
+
+.mypagepost-top>span:nth-child(2){
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    cursor: pointer;
 }
 
 /* 작성내역 end*/
