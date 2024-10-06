@@ -217,99 +217,70 @@
 </div>
 
 <script>
-$(document).ready(function() {
-    $('.category-item').click(function(e) {
-        e.preventDefault();
-        var selectedCategory = $(this).data('category');
+    $(document).ready(function () {
+        let currentPage = 1;
+        let pageSize = 9;
 
-        $('.category-item').removeClass('active');
-        $(this).addClass('active');
+        // 지역 버튼 클릭 시 AJAX로 데이터를 불러오기
+        $('.course-button').on('click', function () {
+            var areaCode = $(this).data('region');
+            var rname = $(this).data("rname");
+            $('#course-title').text('#' + rname);
 
-        if (selectedCategory === 'all') {
-            $('.product-card').show();
-        } else {
-            $('.product-card').each(function() {
-                var cardCategory = $(this).find('.product-category').text();
-                if (cardCategory === selectedCategory) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-        }
-    });
-
-    $('#search-button').click(function() {
-        var searchTerm = $('#search-input').val().toLowerCase();
-        $('.product-card').each(function() {
-            var productTitle = $(this).find('.product-title').text().toLowerCase();
-            if (productTitle.includes(searchTerm)) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
+            // 첫 페이지 데이터 로드
+            loadCourses(areaCode, 1);
         });
-    });
 
-    // 지역 선택 관련 코드
-    $('.location-icon').click(function(e) {
-        e.stopPropagation();
-        $('.location-dropdown').toggle();
-    });
+        // 코스 데이터를 로드하는 함수 (페이지 번호에 따라)
+        function loadCourses(areaCode, pageNo) {
+            $.ajax({
+                url: 'getCoursesByRegion.jsp',
+                type: 'GET',
+                data: { areaCode: areaCode, pageNo: pageNo, pageSize: pageSize },
+                dataType: 'json',
+                success: function (response) {
+                    var courseResults = $('#course-results'); // 코스 아이템이 표시될 영역
+                    courseResults.empty(); // 기존 코스 아이템만 비움
 
-    $('.location-dropdown div').click(function() {
-        var selectedLocation = $(this).data('location');
-        $('.location-icon').text('📍 ' + selectedLocation);
-        $('.location-dropdown').hide();
-        
-        // 여기에 선택된 지역에 따른 상품 필터링 로직 추가
-        if (selectedLocation === '전체') {
-            $('.product-card').show();
-        } else {
-            $('.product-card').each(function() {
-                var cardLocation = $(this).find('.product-info span:first-child').text();
-                if (cardLocation === selectedLocation) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
+                    // 데이터를 화면에 표시
+                    var courses = JSON.parse(response.courses);
+                    $.each(courses, function (index, course) {
+                        var courseItem = `
+                            <div class="course-item">
+                                <img src="` + course.firstImage + `" alt="코스 이미지" />
+                                <p>` + course.title + `</p>
+                            </div>
+                        `;
+                        courseResults.append(courseItem);
+                    });
+
+                    // 페이지네이션 업데이트
+                    updatePagination(areaCode, pageNo, response.totalPages);
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX 에러: ' + error);
                 }
             });
         }
-    });
 
-    $(document).click(function() {
-        $('.location-dropdown').hide();
-    });
+        // 페이지네이션 버튼 업데이트
+        function updatePagination(areaCode, currentPage, totalPages) {
+            var pagination = $('#pagination');
+            pagination.empty();
 
-    // 모달
-    var modal = $('#productModal');
-    var span = $('.close');
-
-    $('.product-card').click(function() {
-        var title = $(this).find('.product-title').text();
-        var price = $(this).find('.product-info span:last-child').text();
-        
-        $('.modal-title').text(title);
-        $('.modal-info.price').text(price);
-        $('.modal-info.location').text('충남 예산군 삽교읍');
-        $('.modal-info.phone').text('010-0000-0000');
-        $('.modal-info.activity').text('활동내용: ///////////////');
-        $('.modal-info.period').text('예약가능 기간: 상시');
-        
-        modal.fadeIn(300);
-    });
-
-    span.click(function() {
-        modal.fadeOut(300);
-    });
-
-    $(window).click(function(event) {
-        if (event.target == modal[0]) {
-            modal.fadeOut(300);
+            for (var i = 1; i <= totalPages; i++) {
+                var pageButton = $('<button>').text(i);
+                if (i === currentPage) {
+                    pageButton.addClass('active');
+                }
+                pageButton.on('click', function () {
+                    loadCourses(areaCode, $(this).text());
+                });
+                pagination.append(pageButton);
+            }
         }
     });
-
-});
 </script>
+
 </body>
 </html>
