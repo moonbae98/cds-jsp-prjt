@@ -44,7 +44,7 @@
         .btn {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
+            background-color: #4caff6;
             color: white;
             border: none;
             border-radius: 5px;
@@ -54,7 +54,7 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #87bee585(86, 167, 254, 0.429)85;
         }
 
         .divider {
